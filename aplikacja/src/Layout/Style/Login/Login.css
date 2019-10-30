@@ -1,0 +1,93 @@
+.LoginBody{ 
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.LoginBacgkroundImage{
+    background-image: url('../../../assets/images/indeks.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width:100%;
+    filter: blur(8px) grayscale(90%);
+}
+
+.LoginContainer{
+    position: absolute;
+    width: 30%;
+    height: 70vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #282c34;
+    opacity: 0.8;
+    box-shadow: black 3px 3px 10px ;
+    border-radius: 20px;
+}
+
+.LoginTitle{
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 30px;
+}
+
+.LoginContent{
+    padding: 20px;
+    border: 1px solid white;
+    flex-direction: column;
+    display: flex;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.LoginContent > button {
+    position: absolute;
+    bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+}
+
+.LoginContent > button:nth-last-of-type(1) {
+    right: 30px;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px
+}
+
+.LoginContent > button:nth-last-of-type(2) {
+    left: 30px;
+    background-color: white;
+    color: #282c34;
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px
+}
+
+.LoginContent > button:nth-last-of-type(1):hover{
+    border: none;
+    background-color: white;
+    color: #282c34;
+    cursor: pointer;
+}
+
+.LoginContent > button:nth-last-of-type(2):hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
