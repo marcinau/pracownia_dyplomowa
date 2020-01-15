@@ -2,14 +2,17 @@ import Plans from '../../models/plans'
 import { GET_PLANS } from '../action/plans';
 
 const initialState = {
-    availablePlans: []
+    availablePlans: {}
 }
 
-export default (state = initialState, action) => {
+const reducer =  (state = initialState, action) => {
     switch(action.type){
       case GET_PLANS:
       return{
-            availablePlans: action.plans
+            availablePlans: action.allplans
       }  
     }
+    return state;
 }
+
+export default reducer;

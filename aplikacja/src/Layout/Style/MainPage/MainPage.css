@@ -1,0 +1,131 @@
+.MainPageContent{
+    width: 90%;
+    height: calc(100vh - 110px);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: auto;
+}
+
+.MainPageCardContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} 
+
+.MainPageCardContainer>a {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+}
+
+.MainPageCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px #ccc;
+    width: 100%;
+    max-width: 300px;
+    min-width: 100px;
+    height: 300px;
+    min-height: 100px;
+    margin: 0 20px 20px 20px ;
+    background-color: white;
+    color: #00aaff;
+}
+
+.MainPageCards:hover{
+    background-color: #00aaff;
+    color: white;
+    transform: scale(1.05)
+}
+
+.MainPageCards > svg {
+    font-size: 100px;
+    color: inherit;
+}
+
+.MainPageCards > p {
+    color: inherit;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 760px) {
+    .MainPageCardContainer {
+        flex-direction: column;
+    }
+
+    .MainPageCards{
+        width: 300px;
+    }
+} 
+
+
+/* .NavigationContainer{
+    border: solid 1px black;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.PlansContainer{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+
+}
+
+.AllPlansContainer{
+    width: 40%;
+    height: calc(100vh - 150px);
+    border: solid 1px black;
+    margin-right: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.SinglePlan {
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.YourPlansContainer{
+    height: 100%;
+    width: 40%;
+}
+
+.FavPlansContainer{
+    width: 100%;
+    height: 70%;
+    margin-bottom: 20px;
+    border: solid 1px black;
+
+
+}
+
+.AddPlansContainer{
+    width: 100%;
+    height: 26%;
+    border: solid 1px black;
+}
+
+.AddButton{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ */
+

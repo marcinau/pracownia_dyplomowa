@@ -1,0 +1,12 @@
+.LayoutBox{
+    display: flex;
+    flex-direction: row;
+    height:100%;
+    background-color: #eee
+}
+
+@media only screen and (max-width: 810px) {
+    .LayoutBox {
+        display: block;
+    }
+} 

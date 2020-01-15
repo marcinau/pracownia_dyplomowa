@@ -1,0 +1,75 @@
+.AllPlansContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.AllPlansBox{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    flex-direction: inherit;
+    align-items: center;
+}
+
+.AllPlansBox > p{
+    font-size: 24px;
+    border-bottom: #ccc solid 1px;
+    width: 100%;
+    padding-bottom: 10px; 
+}
+
+.AllPlansBox>a{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+.SinglePlan{
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px #ccc;
+    width: 70%;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.AllPlansTitle{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 0.4px solid #ccc;
+    width: calc(100% - 10px);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.AllPlansType{
+    font-size: 14px;
+    text-align: right;
+    color: gray;
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.AllPlansDesc {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+    max-width: 700px;
+}
+
+.NotUserPlan {
+    display: none;
+}

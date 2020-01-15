@@ -20,28 +20,39 @@
 .LoginContainer{
     position: absolute;
     width: 30%;
-    height: 70vh;
+    max-width: 500px;
+    min-width: 300px;
+    height: 400px;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #282c34;
-    opacity: 0.8;
+    background-color: black;
+    opacity: 0.9;
     box-shadow: black 3px 3px 10px ;
     border-radius: 20px;
 }
 
 .LoginTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.6rem;
     letter-spacing: 3px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: -40px;
     margin-bottom: 30px;
+    background-color: #00aaff;
+    opacity: 1;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+
 }
 
 .LoginContent{
     padding: 20px;
-    border: 1px solid white;
     flex-direction: column;
     display: flex;
     width: 80%;
@@ -58,36 +69,78 @@
     letter-spacing: 2px;
 }
 
-.LoginContent > button:nth-last-of-type(1) {
+.LoginContent .Button2 {
     right: 30px;
     border: 1px solid white;
     color: white;
     background-color: transparent;
     border-radius: 5px;
-    width: 120px;
-    height: 30px
+    width: 30%;
+    max-width: 150px;
+    min-width: 100px;
+    height: 40px
 }
 
-.LoginContent > button:nth-last-of-type(2) {
+.LoginContent .Button1 {
     left: 30px;
     background-color: white;
     color: #282c34;
     border: none;
     border-radius: 5px;
-    width: 120px;
-    height: 30px
+    width: 30%;
+    max-width: 150px;
+    min-width: 100px;
+    height: 40px
 }
 
-.LoginContent > button:nth-last-of-type(1):hover{
+.LoginContent .Button2:hover{
     border: none;
     background-color: white;
     color: #282c34;
     cursor: pointer;
 }
 
-.LoginContent > button:nth-last-of-type(2):hover{
+.LoginContent .Button1:hover{
     background-color: transparent;
     color: white;
     border: 1px solid white;
     cursor: pointer;
+}
+
+.LoginForm{
+    height: 300px;
+    width: 300px;
+}
+
+.LoginInputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.LoginInputs > svg {
+    font-size: 35px;
+    margin-right: 8px;
+}
+
+.LoginInputs> div{
+    width: 230px;
+    margin-bottom: 15px;
+}
+
+.LoginInputs> div>div {
+    border-bottom: white solid 2px;
+}
+
+.LoginInputs> div>label {
+   color: white;
+}
+
+.LoginInputs> div> .Mui-focused {
+    color: white;
+ }
+
+.LoginInputs> div>div >input{
+    color: white;
 }

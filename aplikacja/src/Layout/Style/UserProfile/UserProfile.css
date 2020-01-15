@@ -1,0 +1,45 @@
+.UserProfileContent{
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UserProfileBox{
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px #ccc;
+    width: 70%;
+    max-width: 600px;
+    height: 200px;
+    background-color: white;
+}
+
+.UserProfileBox> div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.UserProfileBox> div > p{
+    text-align: left;
+    width: 20%;
+}
+
+.UserProfileBox> div > div
+ {
+    width: 60%;
+}
+
+.UserProfileBox> div > div>input
+ {
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid #00aaff;
+}
+
+.UserProfileBox> div > div>input::placeholder {
+    color: black;
+}
+

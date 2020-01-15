@@ -1,0 +1,113 @@
+.SideBarBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    max-width: 400px;
+    min-width: 250px;
+    height: 100vh;
+    color: white;
+    font-size: 30px;
+    background-color: rgba(0,0, 0, 0.85)
+}
+
+.SideBarLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 250px;
+    height: 250px;
+}
+
+.SideBarTitle{
+    margin-bottom: 15px;
+}
+
+.SideBarLogo >div >a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.SideBarUserLogoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+}
+
+.SideBarUserLogoBox> p{
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SideBarUserLogoBox> p > a > svg{
+    font-size: 20px;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    margin-top: 5px; 
+}
+
+.SideBarUserLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: #00aaff;
+    margin: 20px 0 10px 0;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.SideBarOptions {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 250px;
+    margin-top: 20px;
+}
+
+.SideBarOptions >  a {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin: 10px 20px 10px 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+.SideBarOptions >  a:active,
+.SideBarOptions >  a.active,
+.SideBarOptions >  a:hover{
+    background-color: #00aaff;
+    border-radius: 5px;
+}
+
+
+
+.SideBarOptions >  a > svg {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 810px) {
+    .SideBarBox {
+        display: none;
+    }
+} 

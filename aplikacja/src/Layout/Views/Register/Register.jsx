@@ -5,22 +5,24 @@ import {TextField} from '@material-ui/core'
 import Mail from '@material-ui/icons/Mail'
 import LockIcon from '@material-ui/icons/Lock';
 
-
 import * as authAction from '../../../store/action/auth'
 
 import '../../Style/Login/Login.css'
 
-const Login = props => {
-
-
+const Register = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    
+
     const token = useSelector(state => state.auth.token);
+    console.log(token)
+
     const dispatch = useDispatch();
-    
-    const login = async() => {
-           await dispatch(authAction.login(email,password))
+    const singup = async() => {
+        try {
+            await dispatch(authAction.singup(email,password))
+        }catch(err){
+            console.log(err.errorResData)
+        }
     }
 
     if(token){
@@ -28,25 +30,26 @@ const Login = props => {
     }
 
     const keyDownHandler = (event) => {
-        if (event.keyCode === 13) login();
+        if (event.keyCode === 13) singup();
       };
-    
+
     return (
         <div className="LoginBody">
-            <div className="LoginBacgkroundImage">k</div>
+            <div className="LoginBacgkroundImage"></div>
             <div className="LoginContainer">
-                <div className="LoginTitle">Logowanie</div>
+                <div className="LoginTitle">Rejestracja</div>
                 <div className="LoginContent">
                     <div className='LoginForm'>
-                    <div className="LoginInputs"><Mail/><TextField label='email' type='email' className="emailInput" onKeyDown={keyDownHandler} value={email} onChange={event => setEmail(event.target.value)}/></div>
+                    <div className="LoginInputs"><Mail/><TextField label='email' type='email' className="emailInput"  onKeyDown={keyDownHandler} value={email} onChange={event => setEmail(event.target.value)}/></div>
                     <div className="LoginInputs"><LockIcon /><TextField label='password' type='password' className="emailInput" onKeyDown={keyDownHandler} value={password} onChange={event => setPassword(event.target.value)}/></div>
                     </div>
-                    <button onClick={login} className='Button1'>Zaloguj</button>
-                    <button onClick={()=> props.history.push('/register')} className='Button2'>Załóż konto</button>
+                    <button onClick={singup} className='Button1'>Zarejestruj</button>
+                    <button onClick={()=> props.history.push('/login')} className='Button2'>Wróć</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login;
+
+export default Register;

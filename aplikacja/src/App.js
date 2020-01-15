@@ -1,26 +1,37 @@
 import React from 'react';
 import './App.css';
-import {createStore, combineReducers} from 'react'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
+import {Switch, Route, Redirect} from 'react-router-dom'
+import ReduxThunk from 'redux-thunk'
 
 import Login from './Layout/Views/Login/Login'
-import MainPage from './Layout/Views/MainPage/MainPage'
+import Register from './Layout/Views/Register/Register'
+import Layout from './Layout/Layout';
 
 import plansReducer from './store/reducer/plans'
+import authReducer from './store/reducer/auth'
 
-// const rootReducer = combineReducers({
-//   plans: plansReducer
-// })
 
-// const store = createStore(rootReducer)
+const rootReducer = combineReducers({
+  allplans: plansReducer,
+  auth: authReducer
+})
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk))
 
 function App() {
   return (
     <div className="App">
-      <MainPage/>
+    <Provider store = {store} >
+      <Switch>
+        <Route path='/register' component={Register} />
+        <Route path='/login'  component={Login} />
+        <Route path='/' component={Layout} />
+      </Switch>
+      </Provider>
     </div>
-
-  );
+  )
 }
 
 export default App;
