@@ -4,6 +4,7 @@ import MainPage from './Views/MainPage/MainPage';
 import NewPlan from './Views/NewPlan/NewPlan'
 import NavBar from '../Components/Navbar'
 import Messages from './Views/Messages/Messages'
+import CreateMessage from './Views/Messages/CreateMessage'
 import SideBar from '../Components/Sidebar'
 import PlanDetail from './Views/PlanDetail/PlanDetail'
 import AllPlans from './Views/AllPlans/AllPlans'
@@ -21,6 +22,7 @@ const Layout = props => {
         <Switch>
             <Route path="/add_plan" component={NewPlan}/>
             <Route path="/home"  component={MainPage}/>
+            <Route path="/Create_message"   component={CreateMessage}/>
             <Route path="/messages"   component={Messages}/>
             <Route path="/allplans"  component={AllPlans} />
             <Route path="/userplans"  component={UserPlans} />

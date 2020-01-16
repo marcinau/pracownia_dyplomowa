@@ -45,6 +45,9 @@ export const singup = (email, password) => {
             localStorage.setItem('token', response.data.idToken);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('userId', response.data.localId);
+            axios.post('https://rn-complete-guide-34060.firebaseio.com/users.json', {
+                user: response.data.email
+            })
             dispatch(authSuccess(response.data.idToken, response.data.localId));
         })
         .catch(error => {

@@ -27,6 +27,7 @@
     height: calc(100vh - 150px);
     margin-left: 15px;
     background-color: white;
+    overflow: auto;
 }
 
 .Messages {
