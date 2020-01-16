@@ -38,10 +38,8 @@ const CreateMessages = props => {
 
     const sentMessage = async () => {
         await axios.post(`https://rn-complete-guide-34060.firebaseio.com/messages.json`, {
-            content: {
-                content: desc,
-                sender: userEmail
-            },
+            content: desc,
+            sender: userEmail,
             reciever: recieverEmail
         }).then(res=> {
             console.log(res)
