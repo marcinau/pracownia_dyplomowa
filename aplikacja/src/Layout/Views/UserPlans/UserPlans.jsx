@@ -7,9 +7,6 @@ import { display } from '@material-ui/system';
 
 
 const UserPlans = () => {
-    const [desc, setDesc] = useState('')
-    // const [price, setPrice] = useState('')
-    const [title, setTitle] = useState('')
     const [plans, setPlans] = useState([])
 
     const tokenId = localStorage.getItem('token');
@@ -25,7 +22,8 @@ const getPlan = async () => {
             const price = response.data[key].price
             const name = response.data[key].title;
             const userId = response.data[key].userId;
-            plan.push({id ,description: desc, price: price, name: name, userId })
+            const type = response.data[key].type;
+            plan.push({id ,description: desc, price: price, name: name, userId, type })
         }
         setPlans(plan)
         console.log(response.data)
@@ -45,7 +43,7 @@ return (
                 <Link key={item.id} to={`/plan/${item.id}`}> 
                     <div key={item.id} className='SinglePlan' >
                         <div className="AllPlansTitle">{item.name}</div> 
-                        <div className="AllPlansType">typ: {item.name}</div>
+                        <div className="AllPlansType">typ: {item.type}</div>
                         <div className="AllPlansDesc">{item.description}</div> 
                     </div>
                 </Link>)}

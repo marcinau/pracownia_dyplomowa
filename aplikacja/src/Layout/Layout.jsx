@@ -10,6 +10,7 @@ import PlanDetail from './Views/PlanDetail/PlanDetail'
 import AllPlans from './Views/AllPlans/AllPlans'
 import UserPlans from './Views/UserPlans/UserPlans';
 import UserProfile from './Views/UserProfile/UserProfile'
+import AdminPanel from './Views/AdminPanel/AdminPanel'
 
 import './Style/Layout.css'
 
@@ -27,6 +28,7 @@ const Layout = props => {
             <Route path="/allplans"  component={AllPlans} />
             <Route path="/userplans"  component={UserPlans} />
             <Route path='/profile' component={UserProfile}/>
+            <Route path='/admin_panel' component={AdminPanel}/>
             <Route path="/plan/:id"  component={PlanDetail} />
             <Route path="/"  component={MainPage}/>
         </Switch>

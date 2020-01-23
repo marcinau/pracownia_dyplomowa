@@ -1,6 +1,6 @@
 .MainPageContent{
     width: 90%;
-    height: calc(100vh - 110px);
+    height: calc(100vh - 100px);
     margin: auto;
     display: flex;
     flex-direction: column;

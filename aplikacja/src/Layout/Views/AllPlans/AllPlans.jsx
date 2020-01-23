@@ -6,9 +6,6 @@ import '../../Style/AllPlans/AllPlans.css'
 
 
 const AllPlans = () => {
-    const [desc, setDesc] = useState('')
-    // const [price, setPrice] = useState('')
-    const [title, setTitle] = useState('')
     const [plans, setPlans] = useState([])
 
 
@@ -23,7 +20,9 @@ const getPlan = async () => {
             const desc = response.data[key].description
             const price = response.data[key].price
             const name = response.data[key].title;
-            plan.push({id ,description: desc, price: price, name: name })
+            const type = response.data[key].type;
+            const image = response.data[key].imageUrl;
+            plan.push({id ,description: desc, price: price, name: name, type, image})
         }
         setPlans(plan)
         console.log(response.data)
@@ -41,7 +40,7 @@ return (
                 <Link key={item.id} to={`/plan/${item.id}`}> 
                     <div key={item.id} className='SinglePlan'>
                         <div className="AllPlansTitle">{item.name}</div> 
-                        <div className="AllPlansType">typ: {item.name}</div>
+                        <div className="AllPlansType">typ: {item.type}</div>
                         <div className="AllPlansDesc">{item.description}</div> 
                     </div>
                 </Link>)}

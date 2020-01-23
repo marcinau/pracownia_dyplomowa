@@ -14,7 +14,6 @@ const Register = props => {
     const [password, setPassword] = useState('')
 
     const token = useSelector(state => state.auth.token);
-    console.log(token)
 
     const dispatch = useDispatch();
     const singup = async() => {

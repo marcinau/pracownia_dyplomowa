@@ -84,7 +84,7 @@ const PlanDetail =   ({match}) => {
                 <div className="PlanDetailOk">
                     <div className='PlanDetailContent'>
                         <div className="PlanDetailTitle">{plan.title}</div>
-                        <div className="PlanDetailType">typ: {plan.name}{plan.price}</div>
+                        <div className="PlanDetailType">typ: {plan.type}</div>
                         <div className="DescPlanTitle">Opis planu: </div>
                         <div className="PlanDetailDesc">{plan.description}, {plan.price}</div>
                     </div>

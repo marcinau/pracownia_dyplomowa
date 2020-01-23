@@ -22,8 +22,8 @@ const CreateMessages = props => {
         })
     }
 
-    const getUsersInfo = async () => {
-        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/users.json')
+    const getUsersInfo = async str => {
+        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/users.json?orderBy="user"&startAt="' + str + '"&endAt="' + str + '\uf8ff"')
 
         let users = []
 
@@ -53,22 +53,37 @@ const CreateMessages = props => {
 
     useEffect(() => {
         getUserInfo();
-        getUsersInfo();
-    }, [])
+        if(recieverEmail.length === 0){
+            setUsersEmail([])
+            return
+        }
+        getUsersInfo(recieverEmail);
+
+    }, [recieverEmail])
 
     const error = (
     recieverEmail.length > 0 ? (usersEmail.find((item)=> item.email === recieverEmail) ? null : <div>Nie ma takiego mailu</div>) : null
     )
 
+    let send = false
+    const emailto = usersEmail.find((item)=> item.email === recieverEmail);
+    if(emailto && title && desc)
+    {
+        send = true
+    }
+
+
     return (
         <div className="Addnewplan">
-            <div>dodaj plan</div>
-            <div className="AddPlanForm">
+            <div className="AddnewplanTitle">Napisz Wiadomość</div>
+            <div className="AddNewMessage">
             <div className="InputBox"><TextField label='Tytuł' className="TitleInput" value={title} onChange={event => setTitle(event.target.value)}/></div>
-            <div className="InputBox"><TextField label='Podaj e-mail' className="TitleInput" value={recieverEmail} onChange={event => setRecieverEmail(event.target.value)}/></div>
+            <div className="InputBox EmailInputBox"><TextField label='Podaj e-mail' className="TitleInput" value={recieverEmail} onChange={event => setRecieverEmail(event.target.value)}/>
+            <div className="EmailHintBox">{usersEmail.map(item => <div key={item.email}>{item.email}</div>)}</div>
             {error}
-            <div className="InputBox"><TextField multiline label="costam"  rows='10' className="DescriptionInput" value={desc} onChange={event => setDesc(event.target.value)}/></div>
-        <div className="InputBox"><button onClick={() => {sentMessage(); props.history.push('/messages')}}>Dodaj plan</button></div>
+            </div>
+            <div className="InputBox"><TextField multiline label="Treść wiasomości"  rows='10' className="DescriptionInput" value={desc} onChange={event => setDesc(event.target.value)}/></div>
+        <div className="InputBox"><button onClick={() => {sentMessage(); props.history.push('/')}} disabled={!send}>Dodaj plan</button></div>
       </div>
     </div>
     )
