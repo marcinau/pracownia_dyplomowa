@@ -1,12 +1,45 @@
 .MessageBox{
     width: 100%;
-    background-color: #eee
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.MessageBox > p{
+margin-top:0;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 24px;
+letter-spacing: 3px;
+margin-bottom: 10px;;
+}
+
+.MessageBox >a{
+    text-decoration: none;
+    color: white;
+    width: 300px;
+
+}
+
+.MessageBox >a>div{
+    background-color: #00aaff;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 10px #ccc;
 }
 
 .MessageContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 30px;
     width: 100%;
     height: calc(100vh - 30px);
 }
@@ -20,7 +53,7 @@
     padding-right: 0;
 }
 
-.Message {
+.UserMessageBox{
     border-radius: 5px;
     box-shadow: 3px 3px 3px 3px #ccc;
     width: 50%;
@@ -28,6 +61,62 @@
     margin-left: 15px;
     background-color: white;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Pomoc{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.MessageusernicknameYour{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 300px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.MessageusernicknameYour > p{
+    margin-bottom: 0;
+    text-align: left;
+    color: #aaa;
+}
+
+.MessageYour{
+    margin-top: 0;
+    background-color: #026292;
+    border-radius: 10px; 
+    text-align: left;
+    padding: 5px;
+    color: white;
+}
+
+.Messageusernickname{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.Messageusernickname > p{
+    margin-bottom: 0;
+    text-align: left;
+    color: #aaa;
+}
+
+.Message {
+    margin-top: 0;
+   background-color: #00aaff;
+   border-radius: 10px; 
+   text-align: left;
+   padding: 5px;
 }
 
 .Messages {
@@ -83,6 +172,36 @@
     top: 220px;
     border-radius: 0 0 10px 10px;
     z-index: 4;
+}
+
+.Replymessage{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Replymessage > input {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: #00aaff 2px solid;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.SendMail {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00aaff;
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 
 @media only screen and (max-width: 810px) {

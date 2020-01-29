@@ -14,7 +14,7 @@ const AdminPanel = props => {
 
     
     const getPlan = async () => {
-        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/products.json')
+        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/plans.json')
     
             let plan = []
     
@@ -60,7 +60,7 @@ const AdminPanel = props => {
         <div className="AdminPanelContent">
         {option ? usersEmail.map(item => <div key={item.email} className='AdminPanelUsersMap' ><div className="UserEmail">{item.email}</div><div className="DeleteUser"><DeleteForeverIcon onClick={() => {deleteUser(item.userId)}}/></div></div>) 
         : 
-        plans.map(item => <div key={item.id}>{item.name}</div>)}
+        plans.map(item => <div key={item.id} className='AdminPanelPlansMap' ><div className="PlansName">{item.name}</div><div className="DeletePlans"><DeleteForeverIcon onClick={() => {deleteUser(item.userId)}}/></div></div>)}
         </div>
         </div>
     )

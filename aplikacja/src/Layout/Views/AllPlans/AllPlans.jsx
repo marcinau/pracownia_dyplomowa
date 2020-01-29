@@ -1,17 +1,21 @@
 import React , {useState, useEffect} from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import SearchIcon from '@material-ui/icons/Search';
+
+
 
 import '../../Style/AllPlans/AllPlans.css'
 
 
 const AllPlans = () => {
     const [plans, setPlans] = useState([])
+    const [searchPlan, setSearchPlan] = useState([])
 
 
     
 const getPlan = async () => {
-    const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/products.json')
+    const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/plans.json')
 
         let plan = []
 
@@ -30,20 +34,36 @@ const getPlan = async () => {
 
 useEffect(() => {
     getPlan()
+
 }, [])
+
+let filterPlan = plans.filter(item => {return item.name.toLowerCase().indexOf(searchPlan) !== -1} )
+
 
 return (
     <div className="AllPlansContainer">
         <div className='AllPlansBox'>
             <p>Wszystkie plany</p>
-            {plans.map(item => 
+            <div className="AllPlansSearchBox"><input type='text' placeholder="Wyszukaj planu" value={searchPlan} onChange={event => setSearchPlan(event.target.value)}/><div className="SearchButton"><SearchIcon/></div></div>
+            {searchPlan.length === 0 ? plans.map(item => 
                 <Link key={item.id} to={`/plan/${item.id}`}> 
                     <div key={item.id} className='SinglePlan'>
                         <div className="AllPlansTitle">{item.name}</div> 
                         <div className="AllPlansType">typ: {item.type}</div>
+                        <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
                         <div className="AllPlansDesc">{item.description}</div> 
                     </div>
-                </Link>)}
+                </Link>):
+                filterPlan.map(item => 
+                    <Link key={item.id} to={`/plan/${item.id}`}> 
+                        <div key={item.id} className='SinglePlan'>
+                            <div className="AllPlansTitle">{item.name}</div> 
+                            <div className="AllPlansType">typ: {item.type}</div>
+                            <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
+                            <div className="AllPlansDesc">{item.description}</div> 
+                        </div>
+                </Link> )
+            }
         </div>
     </div>
  )

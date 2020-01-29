@@ -1,6 +1,6 @@
 .MainPageContent{
     width: 90%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 60px);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@
     width: 100%;
     max-width: 400px;
     justify-content: center;
+    text-decoration: none;
 }
 
 .MainPageCards{
@@ -54,6 +55,8 @@
 .MainPageCards > p {
     color: inherit;
     font-size: 30px;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 @media only screen and (max-width: 760px) {

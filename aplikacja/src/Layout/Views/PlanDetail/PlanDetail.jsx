@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useSelector} from 'react-redux'
 import {TextField} from '@material-ui/core'
+import Carousel from 'react-bootstrap/Carousel'
 
 import '../../Style/PlanDetail/PlanDetail.css'
 
@@ -32,7 +33,7 @@ const PlanDetail =   ({match}) => {
     
 
     const getPlan = async () => {
-        await axios.get(`https://rn-complete-guide-34060.firebaseio.com/products/${id}.json`)
+        await axios.get(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}.json`)
         .then(response => {
         setPlan(response.data)
         console.log(response.data.comments)
@@ -52,7 +53,7 @@ const PlanDetail =   ({match}) => {
     }
 
     const sentComent = async () => {
-        await axios.post(`https://rn-complete-guide-34060.firebaseio.com/products/${id}/comments.json`, {
+        await axios.post(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}/comments.json`, {
             nick: userEmail,
             coment: commentText,
             data:  new Date()
@@ -76,7 +77,6 @@ const PlanDetail =   ({match}) => {
         <div className="TopCommentBox"><div className="CommentNick">{item.nick}</div><div>{item.data.slice(8,10)}/{item.data.slice(5,7)}/{item.data.slice(0,4)} {item.data.slice(11,16)}</div></div>
         <div className="CommentContent">{item.comment}</div>
     </div>)
-    
 
     return (
         <div className="PlanDetailMain">
@@ -84,9 +84,17 @@ const PlanDetail =   ({match}) => {
                 <div className="PlanDetailOk">
                     <div className='PlanDetailContent'>
                         <div className="PlanDetailTitle">{plan.title}</div>
+                        <div className="PlanDetailAllComp">
                         <div className="PlanDetailType">typ: {plan.type}</div>
+                        <div className="PlanDetailImage"><Carousel className="Carousele">{(plan.imageUrl || []).map(item => (
+                            <Carousel.Item>
+                                <img className="imageincarusel" src={item} alt="image"/>
+                        </Carousel.Item>
+                        ))}</Carousel></div>
+                        
                         <div className="DescPlanTitle">Opis planu: </div>
-                        <div className="PlanDetailDesc">{plan.description}, {plan.price}</div>
+                        <div className="PlanDetailDesc">{plan.description}</div>
+                        </div>
                     </div>
                     <div className='PlanDetailComment'>
                         <p>Komentarze ({comments1.length}) : </p>

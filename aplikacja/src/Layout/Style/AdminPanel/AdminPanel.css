@@ -86,3 +86,37 @@
 }
 
 
+.AdminPanelPlansMap{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    max-width: 800px;
+    height: 60px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.AdminPanelPlansMap:last-child{
+    border-bottom: none;
+}
+
+.PlansName{
+    width: 60%;
+    text-align: left;
+}
+
+.DeletePlans{
+    width: 10%;
+}
+
+.DeletePlans > svg{
+    font-size: 30px;    
+}
+
+.DeletePlans > svg:hover{
+    color: red;
+    cursor: pointer;
+}
+

@@ -21,10 +21,19 @@ export const authSuccess = (token, userId) => {
     };
 };
 
+export const checkAuthTimeout = (expirationTime) => {
+    return dispatch => {
+        setTimeout(() => {
+            dispatch(logout());
+        }, expirationTime * 1000);
+    };
+};
+
 export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('userId');
+    localStorage.removeItem('email')
     return {
         type: AUTH_LOGOUT
     };
@@ -42,6 +51,7 @@ export const singup = (email, password) => {
         .then(response => {
             console.log(response)
             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+            localStorage.setItem('email', response.data.email)
             localStorage.setItem('token', response.data.idToken);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('userId', response.data.localId);
@@ -72,6 +82,7 @@ export const login = (email, password, props)=> {
         .then(response => {
             console.log(response);
             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+            localStorage.setItem('email', response.data.email)
             localStorage.setItem('token', response.data.idToken);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('userId', response.data.localId);
@@ -84,6 +95,7 @@ export const login = (email, password, props)=> {
         
     }
 }
+
 
 export const getUserInfo = (tokenId) => {
     return async dispatch => {

@@ -16,10 +16,12 @@
 }
 
 .AllPlansBox > p{
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
     font-size: 24px;
-    border-bottom: #ccc solid 1px;
-    width: 100%;
-    padding-bottom: 10px; 
+    letter-spacing: 3px;
+    margin-bottom: 0;
 }
 
 .AllPlansBox>a{
@@ -34,7 +36,7 @@
     border-radius: 5px;
     box-shadow: 3px 3px 3px 3px #ccc;
     width: 70%;
-    height: 120px;
+    height: 450px;
     margin-bottom: 20px;
     margin-top: 20px;
     background-color: white;
@@ -51,6 +53,15 @@
     letter-spacing: 3px;
 }
 
+.AllPlansTitle > svg {
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.AllPlansTitle > svg:hover {
+    color: red;
+}
+
 .AllPlansType{
     font-size: 14px;
     text-align: right;
@@ -60,16 +71,65 @@
     margin-right: 10px;
 }
 
+.AllPlansImage{
+    width: 90%;
+    height: 300px;
+    margin: auto;
+}
+
+.AllPlansImage >img{
+    width: 500px;
+    height: 300px
+}
+
 .AllPlansDesc {
     padding: 10px;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 80%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 900px;
+    margin-top: 20px;
 }
 
 .NotUserPlan {
     display: none;
+}
+
+.AllPlansSearchBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 70%;
+}
+
+.AllPlansSearchBox> input{
+    height: 40px;
+    width: 50%;
+    border: 2px solid #00aaff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px #ccc;
+    font-size: 20px;
+    padding: 15px;
+    color: black;
+}
+
+.SearchButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #00aaff;
+    box-shadow: 0 10px 10px #ccc;
+    margin-left: 10px;
+    color: white;
+}
+
+.SearchButton>svg{
+    font-size: 35px;
 }

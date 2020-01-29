@@ -47,10 +47,11 @@ const UserProfile = (props) => {
 
     return (
         <div className='UserProfileContent'>
+            <div className="UserProfileTitle">Panel Użytkownika</div>
             <div className='UserProfileBox'>
                 <div><p>Email</p><div>{user.email}</div></div>
                 <div><p>Password</p><div><input placeholder="*********" disabled={!changepass} value={changedPassword} type="password" onChange={event => setChangedPassword(event.target.value)}/><CreateIcon onClick={() => setChangePass(prevState=> !prevState)}/></div></div>
-                <button disabled={!canSave} onClick={changePassword}>Zapisz zmiany</button>
+                <div className="UserProfileButton"><button disabled={!canSave} onClick={changePassword}>Zapisz zmiany</button></div>
             </div>
         </div>
     )

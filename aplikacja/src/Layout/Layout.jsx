@@ -12,6 +12,7 @@ import UserPlans from './Views/UserPlans/UserPlans';
 import UserProfile from './Views/UserProfile/UserProfile'
 import AdminPanel from './Views/AdminPanel/AdminPanel'
 
+
 import './Style/Layout.css'
 
 
@@ -30,7 +31,7 @@ const Layout = props => {
             <Route path='/profile' component={UserProfile}/>
             <Route path='/admin_panel' component={AdminPanel}/>
             <Route path="/plan/:id"  component={PlanDetail} />
-            <Route path="/"  component={MainPage}/>
+            <Route path="/" exact component={MainPage}/>
         </Switch>
         </div>
     )

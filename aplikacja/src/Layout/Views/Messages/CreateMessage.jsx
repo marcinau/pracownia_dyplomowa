@@ -33,14 +33,14 @@ const CreateMessages = props => {
             users.push({id ,email: email })
         }
         setUsersEmail(users)
-        console.log(users)
     }
 
     const sentMessage = async () => {
         await axios.post(`https://rn-complete-guide-34060.firebaseio.com/messages.json`, {
             content: desc,
             sender: userEmail,
-            reciever: recieverEmail
+            reciever: recieverEmail,
+            subiect: title
         }).then(res=> {
             console.log(res)
             console.log(res.data)
@@ -83,7 +83,7 @@ const CreateMessages = props => {
             {error}
             </div>
             <div className="InputBox"><TextField multiline label="Treść wiasomości"  rows='10' className="DescriptionInput" value={desc} onChange={event => setDesc(event.target.value)}/></div>
-        <div className="InputBox"><button onClick={() => {sentMessage(); props.history.push('/')}} disabled={!send}>Dodaj plan</button></div>
+        <div className="InputBox"><button onClick={() => {sentMessage(); props.history.push('/')}} disabled={!send}>Wyślij wiadomość</button></div>
       </div>
     </div>
     )

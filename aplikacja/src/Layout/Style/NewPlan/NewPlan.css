@@ -55,6 +55,7 @@
 .InputBox > label {
     display: inherit;
     justify-content: center;
+    align-items: center;
     width: 20%;
     max-width: 60px;
     height: 60px;
@@ -70,7 +71,7 @@
 
 .InputBox > button {
     width: 70%;
-    max-width: 180px;
+    max-width: 200px;
     height: 40px;
     margin-top: 20px;
     background-color: #00aaff;
