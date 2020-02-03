@@ -16,14 +16,14 @@ const CreateMessages = props => {
     const tokenId = localStorage.getItem('token');
 
     const getUserInfo = async () => {
-        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E`, {idToken: tokenId})
+        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI`, {idToken: tokenId})
         .then(response => {
             setUserEmail(response.data.users[0].email)
         })
     }
 
     const getUsersInfo = async str => {
-        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/users.json?orderBy="user"&startAt="' + str + '"&endAt="' + str + '\uf8ff"')
+        const response = await axios.get('https://pracainz-473cb.firebaseio.com/users.json?orderBy="user"&startAt="' + str + '"&endAt="' + str + '\uf8ff"')
 
         let users = []
 
@@ -36,7 +36,7 @@ const CreateMessages = props => {
     }
 
     const sentMessage = async () => {
-        await axios.post(`https://rn-complete-guide-34060.firebaseio.com/messages.json`, {
+        await axios.post(`https://pracainz-473cb.firebaseio.com/messages.json`, {
             content: {
                 desc,
                 sender: userEmail

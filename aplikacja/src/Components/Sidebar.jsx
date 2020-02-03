@@ -31,7 +31,7 @@ const SideBar = props => {
  }
 
  const getUserInfo = async () => {
-    await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E`, {idToken: tokenId})
+    await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI`, {idToken: tokenId})
     .then(response => {
         setUserEmail(response.data.users[0].email)
     })

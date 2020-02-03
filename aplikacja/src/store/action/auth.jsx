@@ -47,7 +47,7 @@ export const singup = (email, password) => {
             returnSecureToken: true
             };
 
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E', authData)
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI', authData)
         .then(response => {
             console.log(response)
             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
@@ -55,7 +55,7 @@ export const singup = (email, password) => {
             localStorage.setItem('token', response.data.idToken);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('userId', response.data.localId);
-            axios.post('https://rn-complete-guide-34060.firebaseio.com/users.json', {
+            axios.post('https://pracainz-473cb.firebaseio.com/users.json', {
                 user: response.data.email,
                 userToken: response.data.idToken
             })
@@ -78,7 +78,7 @@ export const login = (email, password, props)=> {
             returnSecureToken: true
             };
 
-       axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E', authData)
+       axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI', authData)
         .then(response => {
             console.log(response);
             const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
@@ -99,7 +99,7 @@ export const login = (email, password, props)=> {
 
 export const getUserInfo = (tokenId) => {
     return async dispatch => {
-    axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E`, {idToken: tokenId})
+    axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI`, {idToken: tokenId})
     .then(response => {
         console.log(response)
     })

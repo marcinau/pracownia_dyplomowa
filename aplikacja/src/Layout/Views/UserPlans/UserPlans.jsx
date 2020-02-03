@@ -17,7 +17,7 @@ const UserPlans = () => {
 
     
 const getPlan = useCallback(async () => {
-    const response = await axios.get(`https://rn-complete-guide-34060.firebaseio.com/plans.json?orderBy="email"&equalTo="${email}"`)
+    const response = await axios.get(`https://pracainz-473cb.firebaseio.com/plans.json?orderBy="email"&equalTo="${email}"`)
 
         let plan = []
 
@@ -37,7 +37,7 @@ const getPlan = useCallback(async () => {
 },[])
 
 const deletePlansHandler = async (id) => {
-    await axios.delete(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}.json?`).then(() => {
+    await axios.delete(`https://pracainz-473cb.firebaseio.com/plans/${id}.json?`).then(() => {
         getPlan();
     })
 }

@@ -15,7 +15,7 @@ const AllPlans = () => {
 
     
 const getPlan = async () => {
-    const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/plans.json')
+    const response = await axios.get('https://pracainz-473cb.firebaseio.com/plans.json')
 
         let plan = []
 

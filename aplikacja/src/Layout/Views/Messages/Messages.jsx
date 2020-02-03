@@ -16,7 +16,7 @@ const Messages = props => {
 
     
     const getMessages =  async () => {
-        const response = await axios.get(`https://rn-complete-guide-34060.firebaseio.com/messages.json?orderBy="reciever"&equalTo="${email}"`)
+        const response = await axios.get(`https://pracainz-473cb.firebaseio.com/messages.json?orderBy="reciever"&equalTo="${email}"`)
 
         console.log(response.data)
         let messages = []
@@ -33,7 +33,7 @@ const Messages = props => {
 }
 
 const getYorMessages =  async () => {
-    const response = await axios.get(`https://rn-complete-guide-34060.firebaseio.com/messages.json?orderBy="sender"&equalTo="${email}"`)
+    const response = await axios.get(`https://pracainz-473cb.firebaseio.com/messages.json?orderBy="sender"&equalTo="${email}"`)
 
     console.log(response.data)
     let messages = []
@@ -51,7 +51,7 @@ const getYorMessages =  async () => {
 }
 
 const sendReplay = async (id) => {
-    await axios.post(`https://rn-complete-guide-34060.firebaseio.com/messages/${id}/content/response.json`, {
+    await axios.post(`https://pracainz-473cb.firebaseio.com/messages/${id}/content/response.json`, {
                 desc,
                 sender: email
             })

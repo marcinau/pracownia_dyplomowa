@@ -27,14 +27,14 @@ const NewPlan = props => {
 
 
     const getUserInfo = async () => {
-        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E`, {idToken: tokenId})
+        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI`, {idToken: tokenId})
         .then(response => {
             setUserEmail(response.data.users[0].email)
         })
     }
 
     const sentPlan = async () => {
-        await axios.post(`https://rn-complete-guide-34060.firebaseio.com/plans.json`, {
+        await axios.post(`https://pracainz-473cb.firebaseio.com/plans.json`, {
             description: desc,
             title: title,
             type: planType,

@@ -14,7 +14,7 @@ const UserProfile = (props) => {
     const tokenId = localStorage.getItem('token');
 
     const getUserInfo = async () => {
-        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E`, {idToken: tokenId})
+        await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI`, {idToken: tokenId})
         .then(response => {
             setUser(response.data.users[0])
             console.log(response.data.users[0])
@@ -22,7 +22,7 @@ const UserProfile = (props) => {
     }
 
     const changePassword = async() => {
-        await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E', {
+        await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI', {
             idToken: tokenId, 
             password: changedPassword, 
             returnSecureToken: true

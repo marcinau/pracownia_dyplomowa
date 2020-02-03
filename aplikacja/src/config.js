@@ -1,4 +1,4 @@
 export const firebaseConfig = {
-                apiKey: 'AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E',
-                storageBucket: 'gs://rn-complete-guide-34060.appspot.com/'
+                apiKey: 'AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI',
+                storageBucket: 'gs://pracainz-473cb.appspot.com/'
             }

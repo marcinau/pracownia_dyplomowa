@@ -33,7 +33,7 @@ const AdminPanel = props => {
         
     
     const getUserInfo = async () => {
-        const response = await axios.get('https://rn-complete-guide-34060.firebaseio.com/users.json')
+        const response = await axios.get('https://pracainz-473cb.firebaseio.com/users.json')
         let users = []
 
         for(let key in response.data){
@@ -45,11 +45,11 @@ const AdminPanel = props => {
     }
 
     const deleteUser = async (userId) => {
-        await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:delete?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E', {idToken: userId})
+        await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:delete?key=AIzaSyBJlos2uT5xr25sp6nO23lmMqomy5D_wUI', {idToken: userId})
     }
 
     const deletePlansHandler = async (id) => {
-        await axios.delete(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}.json?`).then(() => {
+        await axios.delete(`https://pracainz-473cb.firebaseio.com/plans/${id}.json?`).then(() => {
             getPlan();
         })
     }
