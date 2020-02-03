@@ -37,16 +37,16 @@ const CreateMessages = props => {
 
     const sentMessage = async () => {
         await axios.post(`https://rn-complete-guide-34060.firebaseio.com/messages.json`, {
-            content: desc,
+            content: {
+                desc,
+                sender: userEmail
+            },
             sender: userEmail,
             reciever: recieverEmail,
             subiect: title
-        }).then(res=> {
-            console.log(res)
-            console.log(res.data)
-        }).catch(err=> {
-            console.log(err)
         })
+
+        
         
     }
 
@@ -67,7 +67,7 @@ const CreateMessages = props => {
 
     let send = false
     const emailto = usersEmail.find((item)=> item.email === recieverEmail);
-    if(emailto && title && desc)
+    if(title && desc)
     {
         send = true
     }

@@ -46,23 +46,23 @@ return (
             <p>Wszystkie plany</p>
             <div className="AllPlansSearchBox"><input type='text' placeholder="Wyszukaj planu" value={searchPlan} onChange={event => setSearchPlan(event.target.value)}/><div className="SearchButton"><SearchIcon/></div></div>
             {searchPlan.length === 0 ? plans.map(item => 
-                <Link key={item.id} to={`/plan/${item.id}`}> 
                     <div key={item.id} className='SinglePlan'>
-                        <div className="AllPlansTitle">{item.name}</div> 
+                        <div className="AllPlansTitle">{item.name}</div>
+                        <Link key={item.id} to={`/plan/${item.id}`}> 
                         <div className="AllPlansType">typ: {item.type}</div>
                         <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
                         <div className="AllPlansDesc">{item.description}</div> 
-                    </div>
-                </Link>):
+                        </Link>
+                    </div>):
                 filterPlan.map(item => 
-                    <Link key={item.id} to={`/plan/${item.id}`}> 
                         <div key={item.id} className='SinglePlan'>
                             <div className="AllPlansTitle">{item.name}</div> 
+                            <Link key={item.id} to={`/plan/${item.id}`}> 
                             <div className="AllPlansType">typ: {item.type}</div>
                             <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
                             <div className="AllPlansDesc">{item.description}</div> 
-                        </div>
-                </Link> )
+                            </Link>
+                        </div> )
             }
         </div>
     </div>

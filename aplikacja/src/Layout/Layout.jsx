@@ -31,7 +31,7 @@ const Layout = props => {
             <Route path='/profile' component={UserProfile}/>
             <Route path='/admin_panel' component={AdminPanel}/>
             <Route path="/plan/:id"  component={PlanDetail} />
-            <Route path="/" exact component={MainPage}/>
+            <Route path="/" component={MainPage}/>
         </Switch>
         </div>
     )

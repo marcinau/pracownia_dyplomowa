@@ -36,6 +36,12 @@ const getPlan = useCallback(async () => {
         console.log(plan)
 },[])
 
+const deletePlansHandler = async (id) => {
+    await axios.delete(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}.json?`).then(() => {
+        getPlan();
+    })
+}
+
 useEffect(() => {
     setLoading('load')
     getPlan().then((() => {setLoading('')}))
@@ -51,23 +57,23 @@ return (
     <p>Twoje plany</p>
     <div className="AllPlansSearchBox"><input type='text' placeholder="Wyszukaj planu" value={searchPlan} onChange={event => setSearchPlan(event.target.value)}/><div className="SearchButton"><SearchIcon/></div></div>
     {searchPlan.length === 0 ?  plans.map(item =>  
-        <Link key={item.id} to={`/plan/${item.id}`}> 
             <div key={item.id} className='SinglePlan' >
-                <div className="AllPlansTitle">{item.name} <DeleteForeverIcon/></div> 
+                <div className="AllPlansTitle">{item.name} <DeleteForeverIcon onClick={() => {deletePlansHandler(item.id)}}/></div>
+                <Link key={item.id} to={`/plan/${item.id}`}>  
                 <div className="AllPlansType">typ: {item.type}</div>
                 <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
                 <div className="AllPlansDesc">{item.description}</div> 
-            </div>
-        </Link>) : 
+                </Link>
+            </div>) : 
         filterPlan.map(item =>  
-        <Link key={item.id} to={`/plan/${item.id}`}> 
             <div key={item.id} className='SinglePlan' >
                 <div className="AllPlansTitle">{item.name} <DeleteForeverIcon/></div> 
+                <Link key={item.id} to={`/plan/${item.id}`}> 
                 <div className="AllPlansType">typ: {item.type}</div>
                 <div className="AllPlansImage"><img src={item.image} alt="image"/></div>
                 <div className="AllPlansDesc">{item.description}</div> 
-            </div>
-        </Link>)}
+                </Link>
+            </div>)}
     </div>
     </div>
  )

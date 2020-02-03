@@ -48,6 +48,12 @@ const AdminPanel = props => {
         await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:delete?key=AIzaSyDQUgaxD1xHEsVzqHCYYooNeF1mlniMk8E', {idToken: userId})
     }
 
+    const deletePlansHandler = async (id) => {
+        await axios.delete(`https://rn-complete-guide-34060.firebaseio.com/plans/${id}.json?`).then(() => {
+            getPlan();
+        })
+    }
+
     useEffect(() => {
         getPlan();
         getUserInfo(); 
@@ -60,7 +66,7 @@ const AdminPanel = props => {
         <div className="AdminPanelContent">
         {option ? usersEmail.map(item => <div key={item.email} className='AdminPanelUsersMap' ><div className="UserEmail">{item.email}</div><div className="DeleteUser"><DeleteForeverIcon onClick={() => {deleteUser(item.userId)}}/></div></div>) 
         : 
-        plans.map(item => <div key={item.id} className='AdminPanelPlansMap' ><div className="PlansName">{item.name}</div><div className="DeletePlans"><DeleteForeverIcon onClick={() => {deleteUser(item.userId)}}/></div></div>)}
+        plans.map(item => <div key={item.id} className='AdminPanelPlansMap' ><div className="PlansName">{item.name}</div><div className="DeletePlans"><DeleteForeverIcon onClick={() => {deletePlansHandler(item.id)}}/></div></div>)}
         </div>
         </div>
     )

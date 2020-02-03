@@ -24,8 +24,7 @@
     margin-bottom: 0;
 }
 
-.AllPlansBox>a{
-    display: flex;
+.SinglePlan>a{
     width: 100%;
     justify-content: center;
     text-decoration: none;

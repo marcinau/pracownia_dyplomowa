@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: calc(100vh - 100px)
 }
 .MessageBox > p{
 margin-top:0;
@@ -60,10 +61,15 @@ margin-bottom: 10px;;
     height: calc(100vh - 150px);
     margin-left: 15px;
     background-color: white;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.Wszystkiewiadomosci {
+    overflow: auto;
+    height: 600px;
 }
 
 .Pomoc{
@@ -175,6 +181,7 @@ margin-bottom: 10px;;
 }
 
 .Replymessage{
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 50px;
